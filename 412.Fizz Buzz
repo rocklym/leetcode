@@ -1,0 +1,13 @@
+class Solution(object):
+    def fizz_buzz(self, n):
+        num_list = []
+        for x in xrange(1, n + 1):
+            if x % 3 == 0 and x % 5 == 0:
+                num_list.append('FizzBuzz')
+            elif x % 3 == 0:
+                num_list.append('Fizz')
+            elif x % 5 == 0:
+                num_list.append('Buzz')
+            else:
+                num_list.append(str(x))
+        return num_list
