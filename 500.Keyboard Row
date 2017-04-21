@@ -1,0 +1,12 @@
+class Solution(object):
+    def find_words(self, words):
+        set1 = set('QWERTYUIOP')
+        set2 = set('ASDFGHJKL')
+        set3 = set('ZXCVBNM')
+        word_list = []
+        for word in words:
+            word_set = set(word.upper())
+            for ele in [set1, set2, set3]:
+                if ele & word_set == word_set:
+                    word_list.append(word)
+        return word_list
