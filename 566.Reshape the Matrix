@@ -1,0 +1,14 @@
+class Solution(object):
+    def matrix_reshape(self, nums, r, c):
+        elements = []
+        result = []
+        for num in nums:
+            for n in num:
+                elements.append(n)
+        if r * c == len(elements):
+            for i in xrange(r):
+                result.append(elements[:c])
+                del elements[:c]
+            return result
+        else:
+            return nums
