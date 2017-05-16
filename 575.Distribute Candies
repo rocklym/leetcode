@@ -1,0 +1,7 @@
+class Solution(object):
+    def distribute_candies(self, candies):
+        elements = list(set(candies))
+        if len(elements) > len(candies) / 2:
+            return len(candies) / 2
+        else:
+            return len(elements)
