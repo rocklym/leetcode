@@ -1,0 +1,12 @@
+class Solution(object):
+    def next_greater_element(self, find_nums, nums):
+        query = {}
+        stack = []
+        result = []
+        for num in nums:
+            while len(stack) and num > stack[-1]:
+                query[stack.pop()] = num
+            stack.append(num)
+        for n in find_nums:
+            result.append(query.get(n, -1))
+        return result
