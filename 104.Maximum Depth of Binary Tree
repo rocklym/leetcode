@@ -1,0 +1,16 @@
+'''
+class TreeNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+        '''
+
+
+class Solution(object):
+    def max_depth(self, root):
+        if root is None:
+            return 0
+        left_child_height = self.max_depth(root.left)
+        right_child_height = self.max_depth(root.right)
+        return max(left_child_height, right_child_height) + 1
