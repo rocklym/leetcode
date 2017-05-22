@@ -1,0 +1,3 @@
+class Solution(object):
+    def can_win_nim(self, n):
+        return n % 4 != 0
