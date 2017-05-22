@@ -1,0 +1,24 @@
+class Solution(object):
+    def island_perimeter(self, grid):
+        cnt = 0
+        element = []
+        new_grid = []
+
+        for r in grid:
+            for c in r:
+                element.append(c)
+        num = element.count(1)
+
+        unit = len(grid[0])
+        for i in xrange(unit):
+            new_grid.append(element[i::unit])
+        for r in grid:
+            for i in xrange(len(r) - 1):
+                if r[i] + r[i + 1] == 2:
+                    cnt += 1
+        for r in new_grid:
+            for i in xrange(len(r) - 1):
+                if r[i] + r[i + 1] == 2:
+                    cnt += 1
+
+        return num * 4 - cnt * 2
