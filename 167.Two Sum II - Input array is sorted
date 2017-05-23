@@ -3,10 +3,9 @@ class Solution(object):
         lpt = 0
         rpt = len(numbers) - 1
         while lpt <= rpt:
-            s = numbers[lpt] + numbers[rpt]
-            if s == target:
+            if numbers[lpt] + numbers[rpt] == target:
                 return [lpt + 1, rpt + 1]
-            elif s > target:
+            elif numbers[lpt] + numbers[rpt] > target:
                 rpt -= 1
             else:
                 lpt += 1
