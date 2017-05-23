@@ -1,0 +1,5 @@
+class Solution(object):
+    def construct_rectangle(self, area):
+        for length in xrange(int(area ** .5), area + 1):
+            if not area % length and length >= area / length:
+                return [length, area / length]
