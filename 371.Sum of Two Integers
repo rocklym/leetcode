@@ -1,0 +1,4 @@
+class Solution(object):
+    def get_sum(self, a, b):
+        ans = [a, b]
+        return sum(ans)
