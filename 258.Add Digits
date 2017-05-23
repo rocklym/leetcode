@@ -1,0 +1,8 @@
+class Solution(object):
+    def add_digits(self, num):
+        ans = list(str(num))
+        for k, v in enumerate(ans):
+            ans[k] = int(v)
+        if sum(ans) > 9:
+            return self.add_digits(sum(ans))
+        else:
