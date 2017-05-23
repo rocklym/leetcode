@@ -1,0 +1,7 @@
+class Solution(object):
+    def find_the_difference(self, s, t):
+        ans = list(t)
+        for char in s:
+            if char in t:
+                ans.remove(char)
+        return ans[0]
