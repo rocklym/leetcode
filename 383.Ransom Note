@@ -1,0 +1,10 @@
+class Solution(object):
+    def can_construct(self, ransom_note, magazine):
+        note = [i for i in ransom_note]
+        mag = [i for i in magazine]
+        for char in note:
+            if char in mag:
+                mag.remove(char)
+            else:
+                return False
+        return True
