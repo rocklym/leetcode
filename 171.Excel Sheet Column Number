@@ -1,0 +1,6 @@
+class Solution(object):
+    def title_to_number(self, s):
+        sum = 0
+        for k, v in enumerate([char for char in s]):
+            sum += (ord(v) - 64) * (26 ** (len(s) - 1 - k))
+        return sum
