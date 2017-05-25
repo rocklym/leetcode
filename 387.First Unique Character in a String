@@ -1,0 +1,8 @@
+class Solution(object):
+    def first_unique_char(self, s):
+        letters = list(set(s))
+        letters.sort(key=s.index)
+        for char in letters:
+            if s.count(char) == 1:
+                return s.index(char)
+        return -1
