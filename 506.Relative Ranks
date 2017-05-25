@@ -1,0 +1,15 @@
+class Solution(object):
+    def find_relative_ranks(self, nums):
+        rank = sorted(nums)
+        rank.reverse()
+        dic = {}
+        for k, v in enumerate(rank):
+            dic[v] = str(k + 1)
+        for i in dic:
+            if dic[i] == '1':
+                dic[i] = 'Gold Medal'
+            elif dic[i] == '2':
+                dic[i] = 'Silver Medal'
+            elif dic[i] == '3':
+                dic[i] = 'Bronze Medal'
+        return [dic[i] for i in nums]
