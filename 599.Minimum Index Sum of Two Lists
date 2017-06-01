@@ -1,0 +1,9 @@
+class Solution(object):
+    def find_restaurant(self, list1, list2):
+        ans = []
+        num = 2000
+        for k, v in enumerate(list1):
+            if v in list2 and k + list2.index(v) <= num:
+                ans.append(v)
+                num = k + list2.index(v)
+        return ans
