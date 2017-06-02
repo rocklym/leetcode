@@ -1,0 +1,7 @@
+class Solution(object):
+    def is_power_of_three(self, n):
+        if n > 0:
+            while n % 3 == 0:
+                n /= 3
+            return True if n == 1 else False
+        return False
