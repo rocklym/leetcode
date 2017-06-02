@@ -1,0 +1,8 @@
+class Solution(object):
+    def reverse_str(self, s, k):
+        st = list(s)
+        pt = 0
+        while pt < len(s):
+            st[pt:pt + k] = list(reversed(st[pt:pt + k]))
+            pt += 2 * k
+        return ''.join(st)
