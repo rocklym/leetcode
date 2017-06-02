@@ -1,0 +1,11 @@
+class Solution(object):
+    def is_happy(self, n):
+        mem = []
+        while n != 1:
+            total = sum([int(c) ** 2 for c in str(n)])
+            if total not in mem:
+                mem.append(total)
+                n = total
+            else:
+                return False
+        return True
