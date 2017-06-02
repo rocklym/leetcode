@@ -1,0 +1,7 @@
+class Solution(object):
+    def is_power_of_two(self, n):
+        if n > 0:
+            while n % 2 == 0:
+                n /= 2
+            return True if n == 1 else False
+        return False
