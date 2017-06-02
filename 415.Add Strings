@@ -1,0 +1,13 @@
+class Solution(object):
+    def add_strings(self, num1, num2):
+        list1, list2 = list(num1), list(num2)
+        carry = 0
+        res = []
+        while len(list1) > 0 or len(list2) > 0:
+            temp1 = ord(list1.pop()) - ord('0') if len(list1) > 0 else 0
+            temp2 = ord(list2.pop()) - ord('0') if len(list2) > 0 else 0
+            res.append((temp1 + temp2 + carry) % 10)
+            carry = 1 if (temp1 + temp2 + carry) > 9 else 0
+        if carry == 1:
+            res.append(carry)
+        return ''.join(str(c) for c in res)[::-1]
