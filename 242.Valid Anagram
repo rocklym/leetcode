@@ -1,0 +1,7 @@
+class Solution(object):
+    def is_anagram(self, s, t):
+        ans1 = list(s)
+        ans2 = list(t)
+        ans1.sort()
+        ans2.sort()
+        return ans1 == ans2
