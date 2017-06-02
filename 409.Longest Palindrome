@@ -1,0 +1,10 @@
+class Solution(object):
+    def longest_palindrome(self, s):
+        cnt = 0
+        flag = 0
+        alphabet = set(list(s))
+        for c in alphabet:
+            if s.count(c) % 2 == 1:
+                flag = 1
+            cnt += s.count(c) / 2
+        return cnt * 2 + flag
