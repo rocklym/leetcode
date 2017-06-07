@@ -1,0 +1,10 @@
+class Solution(object):
+    def search_insert(self, nums, target):
+        if target in nums:
+            return nums.index(target)
+        elif nums[-1] < target:
+            return len(nums)
+        else:
+            for num in nums:
+                if num > target:
+                    return nums.index(num)
