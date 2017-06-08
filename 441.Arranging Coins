@@ -1,0 +1,9 @@
+class Solution(object):
+    def arrange_coins(self, n):
+        if n == 0:
+            return 0
+        if n == 1:
+            return 1
+        for i in xrange(1, n + 1):
+            if i * (i + 1) / 2 > n:
+                return i - 1
