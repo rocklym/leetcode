@@ -1,0 +1,11 @@
+class Solution(object):
+    def is_palindrome(self, x):
+        l = len(str(x))
+        pt1, pt2 = 0, l - 1
+        while pt1 < pt2:
+            if str(x)[pt1] != str(x)[pt2]:
+                return False
+            else:
+                pt1 += 1
+                pt2 -= 1
+        return True
