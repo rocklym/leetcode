@@ -1,0 +1,17 @@
+class Solution(object):
+    def number_of_boomerangs(self, points):
+        cnt = 0
+        dis = {}
+        for p1 in points:
+            for p2 in points:
+                if p1 == p2:
+                    continue
+                d = self.get_distance(p1, p2)
+                dis[d] = dis.get(d, 0) + 1
+            for val in dis.values():
+                cnt += val * (val - 1)
+            dis.clear()
+        return cnt
+
+    def get_distance(self, point1, point2):
+        return (point1[0] - point2[0]) ** 2 + pow((point1[1] - point2[1]), 2)
