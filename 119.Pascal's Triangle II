@@ -1,0 +1,15 @@
+class Solution(object):
+    def get_row(self, row_index):
+        ans = []
+        for i in xrange(row_index + 1):
+            ans.append(self.cal(i, row_index))
+        return ans
+
+    def step(self, n):
+        if n == 0:
+            return 1
+        if n > 0:
+            return n * self.step(n - 1)
+
+    def cal(self, top, bottom):
+        return self.step(bottom) / (self.step(top) * self.step(bottom - top))
