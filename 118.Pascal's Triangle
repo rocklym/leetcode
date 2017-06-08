@@ -1,0 +1,18 @@
+class Solution(object):
+    def generate(self, num_rows):
+        if num_rows == 0:
+            return []
+        ans = [[] for _ in xrange(num_rows)]
+        for i in xrange(num_rows):
+            for j in xrange(i + 1):
+                ans[i].append(self.cal(j, i))
+        return ans
+
+    def step(self, n):
+        if n == 0:
+            return 1
+        if n > 0:
+            return n * self.step(n - 1)
+
+    def cal(self, top, bottom):
+        return self.step(bottom) / (self.step(top) * self.step(bottom - top))
