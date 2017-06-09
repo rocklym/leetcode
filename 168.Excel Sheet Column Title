@@ -1,0 +1,11 @@
+class Solution(object):
+    def convert_to_title(self, n):
+        ans = []
+        while n:
+            if n % 26 != 0:
+                ans.append(chr(64 + n % 26))
+                n = n / 26
+            else:
+                ans.append('Z')
+                n = n / 26 - 1
+        return ''.join(ans)[::-1]
