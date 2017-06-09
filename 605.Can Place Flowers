@@ -1,0 +1,7 @@
+class Solution(object):
+    def can_place_flowers(self, flowerbed, n):
+        for k, v in enumerate(flowerbed):
+            if not v and (k == 0 or not flowerbed[k - 1]) and (k == len(flowerbed) - 1 or not flowerbed[k + 1]):
+                flowerbed[k] = 1
+                n -= 1
+        return True if n < 1 else False
