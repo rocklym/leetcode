@@ -1,0 +1,8 @@
+class Solution(object):
+    def two_sum(self, nums, target):
+        pt1 = 0
+        while pt1 < len(nums) - 1:
+            for pt2 in xrange(pt1 + 1, len(nums)):
+                if target - nums[pt1] == nums[pt2]:
+                    return [pt1, pt2]
+            pt1 += 1
