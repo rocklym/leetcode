@@ -1,0 +1,23 @@
+class Solution(object):
+    def longest_common_prefix(self, strs):
+        """
+        stop = False
+        if not strs or '' in strs:
+            return ''
+        le = min([len(st) for st in strs])
+        for i in xrange(le):
+            pre = strs[0][:i + 1]
+            for st in strs:
+                if pre != st[:i + 1]:
+                    stop = True
+                    break
+            if stop:
+                return strs[0][:i]
+        return pre
+        """
+        if not strs:
+            return ''
+        for k, v in enumerate(zip(*strs)):
+            if len(set(v)) > 1:
+                return strs[0][:k]
+        return min(strs)
