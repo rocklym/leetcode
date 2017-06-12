@@ -1,0 +1,7 @@
+class Solution(object):
+    def trailing_zeroes(self, n):
+        cnt = 0
+        while n > 4:
+            n /= 5
+            cnt += n
+        return cnt
